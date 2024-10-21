@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медицинская Информационная Система</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Я здесь не сдохну!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Вход</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Вход</h3>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              </div>
+              <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" class="form-control" id="password">
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-primary btn-block" onclick="login()">Войти</button>
+              </div>
+            </form>
+            <div class="d-flex justify-content-center mt-3">
+              <button type="button" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#registrationModal">Регистрация</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно для входа -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Вход</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label for="password">Пароль</label>
+              <input type="password" class="form-control" id="password">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-primary" onclick="login()">Войти</button>
+            </div>  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Модальное окно для регистрации -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="registrationModalLabel">Регистрация</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="firstName">Имя</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Иванов Иван Иванович">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="gender">Пол</label>
+                    <select class="form-control" id="gender">
+                      <option value="">Выберите пол</option>
+                      <option value="мужской">Мужской</option>
+                      <option value="женский">Женский</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="birthdate">Дата рождения</label>
+                    <input type="date" class="form-control" id="birthdate">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Номер телефона</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+7 (XXX) XXX-XX-XX" pattern="+7 \(\d{3}\) \d{3}-\d{2}-\d{2}">
+                </div>
+                <div class="form-group">
+                  <label for="specialty">Специальность</label>
+                  <select class="form-control" id="specialty">
+                    <option value="">Выберите специальность</option>
+                    <option value="терапевт">Терапевт</option>
+                    <option value="хирург">Хирург</option>
+                    <option value="кардиолог">Кардиолог</option>
+                    <option value="гинеколог">Гинеколог</option>
+                    <!-- Добавьте другие специальности -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="password">Пароль</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-block" onclick="register()">Зарегистрироваться</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

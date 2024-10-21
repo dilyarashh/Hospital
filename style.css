@@ -1,0 +1,10 @@
+/* style.css */
+#login-form, #registration-form {
+    display: none;
+  }
+  
+  .nav-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
